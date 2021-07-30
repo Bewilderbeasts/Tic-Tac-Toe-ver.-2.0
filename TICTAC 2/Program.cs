@@ -50,11 +50,8 @@ namespace TICTAC_2
                 return false;
             }
             int ruch = 1;
-            if (ruch >9)
-            {
-                Console.WriteLine();
-            }
-            while (ruch <10)
+
+            while (ruch < 10)
             {
                 for (int i = 0; i < plansza.Length; i++)
                 {
@@ -77,7 +74,7 @@ namespace TICTAC_2
                         {
                             plansza[wybor3] = "X";
                             ruch = ruch + 1;
-                            Console.Clear();                    
+                            Console.Clear();
                         }
                     }
                     else
@@ -109,10 +106,35 @@ namespace TICTAC_2
                     Console.WriteLine("Twój ruch!");
                     Console.WriteLine("");
                 }
-                
-                   
+
+                if (ruch >= 10)
+                {
+                    Console.WriteLine("REMIS");
+                    Console.WriteLine("Czy chcesz rozegrać nową partyjkę? (T/N)");
+                    string koniec = Console.ReadLine();
+                    if (koniec == "T")
+                    {
+                        ruch = 1;
+                        for (int i = 0; i < plansza.Length; i++)
+                        {
+                            plansza[i] = "-";
+                        }
+
+
+
+                    }
+                    else if (koniec == "N")
+                    {
+                        Console.ReadKey();
+                        Console.Clear();
+                        Console.WriteLine("Dzięki za grę");
+                    }
+                    else { Console.WriteLine("Błąd, nie rozumiem"); Console.ReadKey(); };
+                }
+
             }
 
         }
+        }
     }
-}
+
