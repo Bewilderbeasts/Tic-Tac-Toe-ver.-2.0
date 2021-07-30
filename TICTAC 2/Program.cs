@@ -50,9 +50,12 @@ namespace TICTAC_2
                 return false;
             }
             int ruch = 1;
-
+            string gracz = "1";
+            Console.WriteLine("Ruch gracza 1");
+            Console.WriteLine("");
             while (ruch < 10)
             {
+                
                 for (int i = 0; i < plansza.Length; i++)
                 {
                     Console.Write(plansza[i] + " ");
@@ -61,6 +64,7 @@ namespace TICTAC_2
 
                 }
                 Console.WriteLine("");
+                
                 Console.WriteLine("Wybierz pozycje (1-9): ");
                 string wybor = Console.ReadLine();
                 int wybor2 = int.Parse(wybor);
@@ -75,6 +79,7 @@ namespace TICTAC_2
                             plansza[wybor3] = "X";
                             ruch = ruch + 1;
                             Console.Clear();
+                            gracz = "2";
                         }
                     }
                     else
@@ -84,6 +89,7 @@ namespace TICTAC_2
                             plansza[wybor3] = "O";
                             ruch = ruch + 1;
                             Console.Clear();
+                            gracz = "1";
                         }
                     }
                 }
@@ -103,7 +109,7 @@ namespace TICTAC_2
                 }
                 else
                 {
-                    Console.WriteLine("Twój ruch!");
+                    Console.WriteLine("Ruch gracza {0}", gracz);
                     Console.WriteLine("");
                 }
 
